@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Infographic: The Role of the Project Manager | Leadership & Accountability</title>
+  <!-- Font Awesome 6 (free icons for high visuals) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter & Outfit for modern infographic look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eef3fc;
+      font-family: 'Inter', sans-serif;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* main infographic card */
+    .infographic {
+      max-width: 1300px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .infographic-inner {
+      padding: 2rem 2rem 1.8rem 2rem;
+    }
+
+    /* decorative header background */
+    .title-block {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .title-block h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #1D4E6E, #2C7DA0, #61A5C2);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .title-block .accent-line {
+      width: 90px;
+      height: 4px;
+      background: #F4A261;
+      margin: 0.8rem auto 0.5rem;
+      border-radius: 4px;
+    }
+    .sub {
+      color: #2C3E50;
+      font-weight: 500;
+      font-size: 1rem;
+      background: #E9F0F5;
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+    }
+
+    /* 3 column layout */
+    .grid-three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .pillar {
+      background: #FEFEFE;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s;
+      border: 1px solid #E6EDF4;
+      overflow: hidden;
+      padding: 1.5rem 1.2rem;
+    }
+    .pillar:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+      border-color: #C9DDEB;
+    }
+    .pillar-icon {
+      font-size: 2.3rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .pillar:nth-child(1) .pillar-icon { background: #E1F0EA; color: #2A6B58; }
+    .pillar:nth-child(2) .pillar-icon { background: #FDEFE0; color: #E76F51; }
+    .pillar:nth-child(3) .pillar-icon { background: #E1EAF5; color: #3A6EA5; }
+    .pillar h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 1rem;
+      letter-spacing: -0.3px;
+    }
+    .pillar:nth-child(1) h2 { color: #2A6B58; }
+    .pillar:nth-child(2) h2 { color: #E76F51; }
+    .pillar:nth-child(3) h2 { color: #3A6EA5; }
+    .pillar-list {
+      list-style: none;
+      margin: 0.2rem 0 1rem 0;
+    }
+    .pillar-list li {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      color: #2C3E50;
+    }
+    .pillar-list li i {
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+      color: #6C8DA3;
+      min-width: 18px;
+    }
+    .key-skills {
+      background: #F8FBFE;
+      border-radius: 1rem;
+      padding: 0.8rem 1rem;
+      margin-top: 1rem;
+      border-left: 4px solid;
+    }
+    .pillar:nth-child(1) .key-skills { border-left-color: #2A6B58; }
+    .pillar:nth-child(2) .key-skills { border-left-color: #E76F51; }
+    .pillar:nth-child(3) .key-skills { border-left-color: #3A6EA5; }
+    .key-skills p {
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tags span {
+      background: white;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1B4D6E;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      border: 1px solid #DAE6EF;
+    }
+
+    /* Real world example section (CPT) */
+    .realworld {
+      background: linear-gradient(115deg, #F7F9FC 0%, #FFFFFF 100%);
+      border-radius: 1.8rem;
+      margin: 1.2rem 0 2rem 0;
+      border: 1px solid #DDE6EF;
+      overflow: hidden;
+      box-shadow: 0 12px 22px -12px rgba(0,0,0,0.08);
+    }
+    .example-header {
+      background: #1D4E6E;
+      padding: 1rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .example-header h3 {
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin: 0;
+      letter-spacing: -0.2px;
+    }
+    .example-header i {
+      font-size: 1.8rem;
+      color: #F4A261;
+    }
+    .cpt-badge {
+      background: #F4A261;
+      color: #1D3E53;
+      border-radius: 60px;
+      padding: 0.25rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      margin-left: auto;
+    }
+    .example-content {
+      padding: 1.5rem 1.8rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+    .story-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #1F3B4C;
+    }
+    .story-text strong {
+      color: #1D4E6E;
+    }
+    .takeaways {
+      background: #EFF4F9;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+    }
+    .takeaways h4 {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1F5068;
+    }
+    .takeaways ul {
+      list-style: none;
+    }
+    .takeaways li {
+      margin-bottom: 0.65rem;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 8px;
+    }
+    .takeaways li i {
+      color: #2A9D8F;
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 800px) {
+      .example-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* conclusion */
+    .conclusion {
+      background: linear-gradient(95deg, #132A38 0%, #1B4057 100%);
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    .conclusion h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.3px;
+    }
+    .conclusion p {
+      font-size: 0.95rem;
+      opacity: 0.92;
+      max-width: 85%;
+      margin: 0 auto;
+    }
+
+    /* footer LO3 / submission */
+    .footer-info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      border-top: 1px solid #E2EAF1;
+      padding-top: 1.2rem;
+      font-size: 0.75rem;
+      color: #5C7F96;
+    }
+
+    @media (max-width: 850px) {
+      .infographic-inner {
+        padding: 1.4rem;
+      }
+      .grid-three {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .title-block h1 {
+        font-size: 1.7rem;
+      }
+    }
+    /* print support */
+    @media print {
+      body {
+        background: white;
+        padding: 0.2in;
+      }
+      .pillar:hover {
+        transform: none;
+      }
+    }
+    hr {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="infographic">
+  <div class="infographic-inner">
+    <!-- Title Section -->
+    <div class="title-block">
+      <h1>The Role of the Project Manager:<br> Balancing Planning, Communication, and Adaptability</h1>
+      <div class="accent-line"></div>
+      <div class="sub"><i class="fas fa-chalkboard-user"></i> Leadership & Accountability in Action</div>
+    </div>
+
+    <!-- Three core pillars -->
+    <div class="grid-three">
+      <!-- 1. PLANNING -->
+      <div class="pillar">
+        <div class="pillar-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <h2>📋 Planning</h2>
+        <ul class="pillar-list">
+          <li><i class="fas fa-bullseye"></i> <strong>Goal Setting:</strong> Defining project scope, objectives, and milestones.</li>
+          <li><i class="fas fa-users"></i> <strong>Resource Allocation:</strong> Ensuring the right people, materials, and tools are available.</li>
+          <li><i class="fas fa-calendar-week"></i> <strong>Scheduling:</strong> Creating realistic timelines, with buffers for potential delays.</li>
+          <li><i class="fas fa-shield-alt"></i> <strong>Risk Management:</strong> Identifying potential risks and creating mitigation plans.</li>
+        </ul>
+        <div class="key-skills">
+          <p><i class="fas fa-lightbulb"></i> Key Skills</p>
+          <div class="skill-tags">
+            <span>Strategic Thinking</span><span>Problem Solving</span><span>Forecasting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. COMMUNICATION -->
+      <div class="pillar">
+        <div class="pillar-icon"><i class="fas fa-comments"></i></div>
+        <h2>💬 Communication</h2>
+        <ul class="pillar-list">
+          <li><i class="fas fa-clipboard-list"></i> <strong>Clear Expectations:</strong> Ensuring all stakeholders understand project goals and roles.</li>
+          <li><i class="fas fa-chart-line"></i> <strong>Regular Updates:</strong> Providing consistent status reports to stakeholders and team members.</li>
+          <li><i class="fas fa-handshake"></i> <strong>Conflict Resolution:</strong> Addressing issues or disputes quickly and transparently.</li>
+          <li><i class="fas fa-people-arrows"></i> <strong>Collaboration:</strong> Fostering teamwork and cross-functional communication.</li>
+        </ul>
+        <div class="key-skills">
+          <p><i class="fas fa-ear-listen"></i> Key Skills</p>
+          <div class="skill-tags">
+            <span>Active Listening</span><span>Public Speaking</span><span>Negotiation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ADAPTABILITY -->
+      <div class="pillar">
+        <div class="pillar-icon"><i class="fas fa-sync-alt"></i></div>
+        <h2>⚙️ Adaptability</h2>
+        <ul class="pillar-list">
+          <li><i class="fas fa-expand-arrows-alt"></i> <strong>Flexibility:</strong> Adjusting plans based on changes in scope, timelines, or resources.</li>
+          <li><i class="fas fa-microchip"></i> <strong>Problem-Solving:</strong> Quickly addressing unexpected challenges and finding solutions.</li>
+          <li><i class="fas fa-brain"></i> <strong>Decision-Making:</strong> Evaluating different solutions and deciding based on project priorities.</li>
+        </ul>
+        <div class="key-skills">
+          <p><i class="fas fa-chalkboard"></i> Key Skills</p>
+          <div class="skill-tags">
+            <span>Critical Thinking</span><span>Time Management</span><span>Creative Problem Solving</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real-World Example from CPT Experience (hydroponic lettuce facility) -->
+    <div class="realworld">
+      <div class="example-header">
+        <i class="fas fa-industry"></i>
+        <h3>🌱 Real-World Example – CPT Experience</h3>
+        <span class="cpt-badge"><i class="fas fa-verified"></i> Workplace Leadership</span>
+      </div>
+      <div class="example-content">
+        <div class="story-text">
+          <p><strong>📍 Role:</strong> Food Safety and Quality Manager at a hydroponic lettuce facility.</p>
+          <p><i class="fas fa-chevron-circle-right" style="color:#F4A261;"></i> <strong>Challenge:</strong> Unexpected disruption in the supply chain – sudden shortage of critical packaging materials delayed production timelines. Without rapid adaptation, the project risked missing delivery windows and compromising quality standards.</p>
+          <p><i class="fas fa-chevron-circle-right" style="color:#F4A261;"></i> <strong>Leadership in action:</strong> Instead of panicking, I worked closely with suppliers to source alternatives, restructured the project plan to prioritize essential batches, and communicated new timelines to all stakeholders (procurement, operations, and logistics). Daily stand-ups ensured team alignment, and we introduced buffer tasks to absorb future variability.</p>
+          <p><i class="fas fa-chevron-circle-right" style="color:#F4A261;"></i> <strong>Result:</strong> Managed to keep the project on track with minimal disruption. Delivered safe, high-quality lettuce on revised schedule while maintaining customer trust. The facility even improved contingency protocols afterward.</p>
+        </div>
+        <div class="takeaways">
+          <h4><i class="fas fa-lightbulb"></i> Key Takeaways</h4>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> <strong>Adaptability</strong> is crucial to overcome unforeseen challenges – sourcing alternative materials saved the project.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Effective communication</strong> kept everyone aligned despite changes; no team member was left in the dark.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Planning adjustments</strong> (re-structured roadmap) helped minimize impact on overall project goals.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Leadership accountability</strong> means owning the problem and rallying the team toward a solution.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conclusion: The Value of Project Managers -->
+    <div class="conclusion">
+      <h3>🎯 The Value of Project Managers</h3>
+      <p>Project managers must balance <strong>planning, communication, and adaptability</strong> to ensure a project's success. Their ability to handle unexpected challenges, keep stakeholders informed, and maintain focus on the end goals can make or break the success of any initiative. True leadership emerges when these three pillars work in harmony — driving accountability, trust, and results.</p>
+    </div>
+
+    <!-- Footer: LO3 Reflection + submission details -->
+    <div class="footer-info">
+      <div><i class="fas fa-clipboard-check"></i> LO3 Reflection: Leadership is accountability in action. This infographic demonstrates how planning (WBS & risk mgmt), transparent communication, and agile adaptability turn obstacles into opportunities. As seen in the hydroponic case, adaptive leadership drives project resilience.</div>
+      <div><i class="fas fa-file-pdf"></i> Submitted as PDF | [Student Name] | April 26, 2026</div>
+    </div>
+    <div style="text-align: right; font-size: 0.65rem; margin-top: 0.5rem; color: #6F8FAB;">
+      <i class="far fa-calendar-alt"></i> Due: Sunday, April 26, 2026 — The Role of the Project Manager (LO3)
+    </div>
+  </div>
+</div>
+</body>
+</html>
